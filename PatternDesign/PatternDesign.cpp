@@ -9,6 +9,7 @@
 
 #include "SingletonPattern.h"
 #include "ObserverPattern.h"
+#include "StrategyPattern.h"
 
 void SingletonExample(void)
 {
@@ -42,21 +43,37 @@ void ObserverExample(void)
 
 	weatherStation.SetTemperature(27);
 }
+
+void StrategyExample(void)
+{
+	std::cout << "A example of strategy pattern : \n"
+		<< "Context1 and Context2 invoked the same method but with different strategy."
+		<< std::endl;
+	Context context1(new StrategyA());
+	Context context2(new StrategyB());
+	context1.Operation();
+	context2.Operation();
+}
+
 enum Patterns 
 {
 	SingletonPattern,
-	ObserverPattern
+	ObserverPattern,
+	StrategyPattern
 };
 
 int main(int argc, char * argv[]) 
 {
-	switch (Patterns::ObserverPattern) 
+	switch (Patterns::StrategyPattern)
 	{
 	case SingletonPattern:
 		SingletonExample();
 		break;
 	case ObserverPattern:
 		ObserverExample();
+		break;
+	case StrategyPattern:
+		StrategyExample();
 		break;
 	default:
 		break;

@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="ObserverPattern.h" />
     <ClInclude Include="SingletonPattern.h" />
+    <ClInclude Include="StrategyPattern.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PatternDesign.cpp" />

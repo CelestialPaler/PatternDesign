@@ -21,6 +21,9 @@
     <ClInclude Include="ObserverPattern.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="StrategyPattern.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PatternDesign.cpp">
