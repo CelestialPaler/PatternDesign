@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DecoratorPattern.h" />
     <ClInclude Include="ObserverPattern.h" />
     <ClInclude Include="SingletonPattern.h" />
     <ClInclude Include="StrategyPattern.h" />

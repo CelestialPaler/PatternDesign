@@ -24,6 +24,9 @@
     <ClInclude Include="StrategyPattern.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="DecoratorPattern.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PatternDesign.cpp">
