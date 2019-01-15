@@ -10,6 +10,7 @@
 #include "SingletonPattern.h"
 #include "ObserverPattern.h"
 #include "StrategyPattern.h"
+#include "SimpleFactoryPattern.h"
 
 void SingletonExample(void)
 {
@@ -55,16 +56,27 @@ void StrategyExample(void)
 	context2.Operation();
 }
 
+void SimpleFactoryExample(void) 
+{
+	SimpleFactory factory;
+	Product * a = factory.CreateProduct("A");
+	Product * b = factory.CreateProduct("B");
+
+	a->Method();
+	b->Method();
+}
+
 enum Patterns 
 {
 	SingletonPattern,
 	ObserverPattern,
-	StrategyPattern
+	StrategyPattern,
+	SimpleFactoryPattern
 };
 
 int main(int argc, char * argv[]) 
 {
-	switch (Patterns::StrategyPattern)
+	switch (Patterns::SimpleFactoryPattern)
 	{
 	case SingletonPattern:
 		SingletonExample();
@@ -74,6 +86,9 @@ int main(int argc, char * argv[])
 		break;
 	case StrategyPattern:
 		StrategyExample();
+		break;
+	case SimpleFactoryPattern:
+		SimpleFactoryExample();
 		break;
 	default:
 		break;

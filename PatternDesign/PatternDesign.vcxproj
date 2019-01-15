@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="DecoratorPattern.h" />
+    <ClInclude Include="SimpleFactoryPattern.h" />
     <ClInclude Include="ObserverPattern.h" />
     <ClInclude Include="SingletonPattern.h" />
     <ClInclude Include="StrategyPattern.h" />
