@@ -11,6 +11,52 @@
 #include "ObserverPattern.h"
 #include "StrategyPattern.h"
 #include "SimpleFactoryPattern.h"
+#include "FactoryMethodPattern.h"
+#include "AbstractFactoryPattern.h"
+
+void SingletonExample(void);
+void ObserverExample(void);
+void StrategyExample(void);
+void SimpleFactoryExample(void);
+void FactoryMethodExample(void);
+void AbstractFactoryExample(void);
+
+enum Patterns 
+{
+	SingletonPattern,
+	ObserverPattern,
+	StrategyPattern,
+	SimpleFactoryPattern,
+	FactoryMethodPattern,
+	AbstractFactoryPattern
+};
+
+int main(int argc, char * argv[]) 
+{
+	switch (Patterns::AbstractFactoryPattern)
+	{
+	case SingletonPattern:
+		SingletonExample();
+		break;
+	case ObserverPattern:
+		ObserverExample();
+		break;
+	case StrategyPattern:
+		StrategyExample();
+		break;
+	case SimpleFactoryPattern:
+		SimpleFactoryExample();
+		break;
+	case FactoryMethodPattern:
+		FactoryMethodExample();
+		break;
+	case AbstractFactoryPattern:
+		AbstractFactoryExample();
+		break;
+	default:
+		break;
+	}
+}
 
 void SingletonExample(void)
 {
@@ -23,7 +69,7 @@ void SingletonExample(void)
 void ObserverExample(void)
 {
 	std::cout << "A example of observer pattern : \n"
-		<< "Phones that subscribed a weather station for temperature." 
+		<< "Phones that subscribed a weather station for temperature."
 		<< std::endl;
 	WeatherStation weatherStation;
 	Phone phone1;
@@ -56,7 +102,7 @@ void StrategyExample(void)
 	context2.Operation();
 }
 
-void SimpleFactoryExample(void) 
+void SimpleFactoryExample(void)
 {
 	SimpleFactory factory;
 	Product * a = factory.CreateProduct("A");
@@ -66,31 +112,23 @@ void SimpleFactoryExample(void)
 	b->Method();
 }
 
-enum Patterns 
+void FactoryMethodExample(void)
 {
-	SingletonPattern,
-	ObserverPattern,
-	StrategyPattern,
-	SimpleFactoryPattern
-};
+	FactoryC factoryC;
+	FactoryD factoryD;
+	IProduct * productC = factoryC.CreateProduct();
+	IProduct * productD = factoryD.CreateProduct();
+	productC->Method();
+	productD->Method();
+}
 
-int main(int argc, char * argv[]) 
+void AbstractFactoryExample(void)
 {
-	switch (Patterns::SimpleFactoryPattern)
-	{
-	case SingletonPattern:
-		SingletonExample();
-		break;
-	case ObserverPattern:
-		ObserverExample();
-		break;
-	case StrategyPattern:
-		StrategyExample();
-		break;
-	case SimpleFactoryPattern:
-		SimpleFactoryExample();
-		break;
-	default:
-		break;
-	}
+	AbstractFactory1 absfactory1;
+	absfactory1.CreateProductFamilyA()->Method();
+	absfactory1.CreateProductFamilyB()->Method();
+
+	AbstractFactory2 absfactory2;
+	absfactory2.CreateProductFamilyA()->Method();
+	absfactory2.CreateProductFamilyB()->Method();
 }

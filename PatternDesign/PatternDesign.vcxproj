@@ -139,7 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractFactoryPattern.h" />
     <ClInclude Include="DecoratorPattern.h" />
+    <ClInclude Include="FactoryMethodPattern.h" />
     <ClInclude Include="SimpleFactoryPattern.h" />
     <ClInclude Include="ObserverPattern.h" />
     <ClInclude Include="SingletonPattern.h" />

@@ -1,46 +1,60 @@
 ﻿/***************************************************************************************************/
 /*								        		 			Pattern Design  														      */
-/*								        		 	    Simple Factory Pattern     												      */
+/*								        		 	    Factory Method Pattern     											      */
 /*                                                    www.tianshicangxie.com                                                       */
 /*                                      Copyright © 2015-2018 Celestial Tech Inc.                                          */
 /***************************************************************************************************/
 #pragma once
 #include <iostream>
 
-class Product
+// The interface of the Product class
+class IProduct
 {
 public:
-	virtual void Method() = 0;
+	virtual void Method(void) = 0;
 };
 
-class ProductA : public Product
+class ProductC : public IProduct
 {
 public:
 	void Method(void)
 	{
-		std::cout << "This is a product A." << std::endl;
+		std::cout << "This is a product C." << std::endl;
 	}
 };
 
-class ProductB : public Product
+class ProductD: public IProduct
 {
 public:
 	void Method(void)
 	{
-		std::cout << "This is a product B." << std::endl;
+		std::cout << "This is a product D." << std::endl;
 	}
 };
 
-class SimpleFactory
+// The interface of the Factory class
+class IFactory
 {
 public:
-	Product * CreateProduct(std::string _type)
+	virtual IProduct * CreateProduct(void) = 0;
+};
+
+// two inplment of the interface 
+class FactoryC : public IFactory
+{
+public:
+	IProduct * CreateProduct(void)
 	{
-		if (_type == "A")
-			return new ProductA();
-		else if (_type == "B")
-			return new ProductB();
-		else
-			return new ProductA();
+		return new ProductC();
 	}
 };
+
+class FactoryD : public IFactory
+{
+public:
+	IProduct * CreateProduct(void)
+	{
+		return new ProductD();
+	}
+};
+

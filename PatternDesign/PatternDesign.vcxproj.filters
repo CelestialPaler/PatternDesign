@@ -30,6 +30,12 @@
     <ClInclude Include="SimpleFactoryPattern.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="FactoryMethodPattern.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractFactoryPattern.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PatternDesign.cpp">
