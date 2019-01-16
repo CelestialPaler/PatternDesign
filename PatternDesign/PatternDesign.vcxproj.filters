@@ -36,6 +36,9 @@
     <ClInclude Include="AbstractFactoryPattern.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="CommandPattern.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PatternDesign.cpp">

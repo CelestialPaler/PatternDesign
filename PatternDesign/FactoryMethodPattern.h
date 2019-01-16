@@ -1,60 +1,92 @@
-﻿/***************************************************************************************************/
-/*								        		 			Pattern Design  														      */
-/*								        		 	    Factory Method Pattern     											      */
-/*                                                    www.tianshicangxie.com                                                       */
-/*                                      Copyright © 2015-2018 Celestial Tech Inc.                                          */
-/***************************************************************************************************/
+﻿/**
+*  Pattern Design - Factory Method Pattern
+*  Copyright (C) 2015-2019 Celestial Tech
+*  For more please check our website: www.tianshicangxie.com
+*  @file     FactoryMethodPattern.h
+*  @brief    Pattern Design - Factory Method Pattern
+*  @author   Celestial Paler
+*  @email    sun1106153343@hotmail.com
+*  @date     2019.01.16
+*/
 #pragma once
 #include <iostream>
 
-// The interface of the Product class
+/**
+ * @brief The interface of the Product class.
+ */
 class IProduct
 {
 public:
 	virtual void Method(void) = 0;
 };
 
-class ProductC : public IProduct
+/**
+ * @brief A concrete implementation of IStrategy.
+ */
+class ProductA : public IProduct
 {
 public:
 	void Method(void)
 	{
-		std::cout << "This is a product C." << std::endl;
+		std::cout << "This is a product A." << std::endl;
 	}
 };
 
-class ProductD: public IProduct
+/**
+ * @brief Another concrete implementation of IStrategy.
+ */
+class ProductB: public IProduct
 {
 public:
 	void Method(void)
 	{
-		std::cout << "This is a product D." << std::endl;
+		std::cout << "This is a product B." << std::endl;
 	}
 };
 
-// The interface of the Factory class
+/**
+ * @brief The interface of the Factory class.
+ */
 class IFactory
 {
 public:
 	virtual IProduct * CreateProduct(void) = 0;
 };
 
-// two inplment of the interface 
-class FactoryC : public IFactory
+/**
+ * @brief A concrete implementation of IFactory.
+ */
+class FactoryA : public IFactory
 {
 public:
 	IProduct * CreateProduct(void)
 	{
-		return new ProductC();
+		return new ProductA();
 	}
 };
 
-class FactoryD : public IFactory
+/**
+ * @brief Another concrete implementation of IFactory.
+ */
+class FactoryB : public IFactory
 {
 public:
 	IProduct * CreateProduct(void)
 	{
-		return new ProductD();
+		return new ProductB();
 	}
 };
 
+/**
+ * @brief A example of strategy pattern. 
+ */
+void Example(void)
+{
+	FactoryA factoryA;
+	FactoryB factoryB;
+	IProduct * productA = factoryA.CreateProduct();
+	IProduct * productB = factoryB.CreateProduct();
+
+	productA->Method();
+	productB->Method();
+}

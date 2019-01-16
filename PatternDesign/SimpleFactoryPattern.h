@@ -1,19 +1,29 @@
-﻿/***************************************************************************************************/
-/*								        		 			Pattern Design  														      */
-/*								        		 	    Simple Factory Pattern     												      */
-/*                                                    www.tianshicangxie.com                                                       */
-/*                                      Copyright © 2015-2018 Celestial Tech Inc.                                          */
-/***************************************************************************************************/
+﻿/**
+*  Pattern Design - Simple Factory Pattern
+*  Copyright (C) 2015-2019 Celestial Tech
+*  For more please check our website: www.tianshicangxie.com
+*  @file     SimpleFactoryPattern.h
+*  @brief    Pattern Design - Simple Factory Pattern
+*  @author   Celestial Paler
+*  @email    sun1106153343@hotmail.com
+*  @date     2019.01.16
+*/
 #pragma once
 #include <iostream>
 
-class Product
+/**
+ * @brief The interface of the Observer class.
+ */
+class IProduct
 {
 public:
 	virtual void Method() = 0;
 };
 
-class ProductA : public Product
+/**
+ * @brief A concrete implementation of IProduct.
+ */
+class ProductA : public IProduct
 {
 public:
 	void Method(void)
@@ -22,7 +32,10 @@ public:
 	}
 };
 
-class ProductB : public Product
+/**
+ * @brief Another concrete implementation of IProduct.
+ */
+class ProductB : public IProduct
 {
 public:
 	void Method(void)
@@ -31,16 +44,33 @@ public:
 	}
 };
 
+/**
+ * @brief The simple factory creates the object according to the pramater that passed into the 
+ *             factory.
+ */
 class SimpleFactory
 {
 public:
-	Product * CreateProduct(std::string _type)
+	IProduct * CreateProduct(char _type)
 	{
-		if (_type == "A")
+		if (_type == 'A')
 			return new ProductA();
-		else if (_type == "B")
+		else if (_type == 'B')
 			return new ProductB();
 		else
 			return new ProductA();
 	}
 };
+
+/**
+ * @brief A example of simple factory pattern.
+ */
+void Example(void)
+{
+	SimpleFactory factory;
+	IProduct * a = factory.CreateProduct('A');
+	IProduct * b = factory.CreateProduct('B');
+
+	a->Method();
+	b->Method();
+}

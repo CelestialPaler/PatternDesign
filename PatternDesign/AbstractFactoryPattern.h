@@ -1,9 +1,13 @@
-﻿/***************************************************************************************************/
-/*								        		 			Pattern Design  														      */
-/*								        		 	    Abstract Factory Pattern     											      */
-/*                                                    www.tianshicangxie.com                                                       */
-/*                                          Copyright © 2015-2019 Celestial Tech                                            */
-/***************************************************************************************************/
+﻿/**
+*  Pattern Design - Abstract Factory Pattern
+*  Copyright (C) 2015-2019 Celestial Tech
+*  For more please check our website: www.tianshicangxie.com
+*  @file     AbstractFactoryPattern.h
+*  @brief    Pattern Design - Abstract Factory Pattern
+*  @author   Celestial Paler
+*  @email    sun1106153343@hotmail.com
+*  @date     2019.01.16
+*/
 #pragma once
 #include <iostream>
 
@@ -88,3 +92,15 @@ public:
 		return new ProductB2();
 	}
 };
+
+
+void AbstractFactoryExample(void)
+{
+	AbstractFactory1 absfactory1;
+	absfactory1.CreateProductFamilyA()->Method();
+	absfactory1.CreateProductFamilyB()->Method();
+
+	AbstractFactory2 absfactory2;
+	absfactory2.CreateProductFamilyA()->Method();
+	absfactory2.CreateProductFamilyB()->Method();
+}
