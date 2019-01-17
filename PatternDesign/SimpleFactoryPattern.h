@@ -6,7 +6,7 @@
 *  @brief    Pattern Design - Simple Factory Pattern
 *  @author   Celestial Paler
 *  @email    sun1106153343@hotmail.com
-*  @date     2019.01.16
+*  @date     2019.01.17
 */
 #pragma once
 #include <iostream>
@@ -60,6 +60,11 @@ public:
 		else
 			return new ProductA();
 	}
+	void ReturnProduct(IProduct * _product)
+	{
+		if (_product != nullptr)
+			delete _product;
+	}
 };
 
 /**
@@ -73,4 +78,7 @@ void Example(void)
 
 	a->Method();
 	b->Method();
+
+	factory.ReturnProduct(a);
+	factory.ReturnProduct(b);
 }

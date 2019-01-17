@@ -9,7 +9,7 @@
 *  @date     2019.01.17
 */
 
-#define CommandPattern
+#define SimpleFactoryPattern
 
 #ifdef SingletonPattern
 #include "SingletonPattern.h"
