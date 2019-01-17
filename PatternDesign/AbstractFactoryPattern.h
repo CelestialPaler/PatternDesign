@@ -11,13 +11,19 @@
 #pragma once
 #include <iostream>
 
-class ProductFamilyA
+/**
+ * @brief The interface of the ProductFamilyA class.
+ */
+class IProductFamilyA
 {
 public:
 	virtual void Method(void) = 0;
 };
 
-class ProductA1 : public ProductFamilyA
+/**
+ * @brief A concrete implementation of IProductFamilyA.
+ */
+class ProductA1 : public IProductFamilyA
 {
 public:
 	void Method(void) override
@@ -26,7 +32,10 @@ public:
 	}
 };
 
-class ProductA2 : public ProductFamilyA
+/**
+ * @brief Another concrete implementation of IProductFamilyA.
+ */
+class ProductA2 : public IProductFamilyA
 {
 public:
 	void Method(void) override
@@ -35,12 +44,18 @@ public:
 	}
 };
 
+/**
+ * @brief The interface of the ProductFamilyB class.
+ */
 class ProductFamilyB
 {
 public:
 	virtual void Method(void) = 0;
 };
 
+/**
+ * @brief A concrete implementation of IProductFamilyB.
+ */
 class ProductB1 : public ProductFamilyB
 {
 public:
@@ -50,6 +65,9 @@ public:
 	}
 };
 
+/**
+ * @brief Another concrete implementation of IProductFamilyB.
+ */
 class ProductB2 : public ProductFamilyB
 {
 public:
@@ -59,18 +77,23 @@ public:
 	}
 };
 
-// The interface of the Abstract Factory class 
+/**
+ * @brief The interface of the AbstractFactory class.
+ */
 class IAbstractFactory
 {
 public:
-	virtual ProductFamilyA * CreateProductFamilyA(void) = 0;
+	virtual IProductFamilyA * CreateProductFamilyA(void) = 0;
 	virtual ProductFamilyB * CreateProductFamilyB(void) = 0;
 };
 
+/**
+ * @brief A concrete implementation of IAbstractFactory.
+ */
 class AbstractFactory1 : public IAbstractFactory
 {
 public:
-	ProductFamilyA * CreateProductFamilyA(void) override
+	IProductFamilyA * CreateProductFamilyA(void) override
 	{
 		return new ProductA1();
 	}
@@ -80,10 +103,13 @@ public:
 	}
 };
 
+/**
+ * @brief Another concrete implementation of IAbstractFactory.
+ */
 class AbstractFactory2 : public IAbstractFactory
 {
 public:
-	ProductFamilyA * CreateProductFamilyA(void) override
+	IProductFamilyA * CreateProductFamilyA(void) override
 	{
 		return new ProductA2();
 	}
@@ -93,8 +119,10 @@ public:
 	}
 };
 
-
-void AbstractFactoryExample(void)
+/**
+ * @brief A example of abstract factory pattern.
+ */
+void Example(void)
 {
 	AbstractFactory1 absfactory1;
 	absfactory1.CreateProductFamilyA()->Method();

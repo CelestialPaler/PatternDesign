@@ -9,7 +9,7 @@
 *  @date     2019.01.16
 */
 
-#define FactoryMethodPattern
+#define DecoratorPattern
 
 #ifdef SingletonPattern
 #include "SingletonPattern.h"
@@ -29,6 +29,9 @@
 #ifdef AbstractFactoryPattern
 #include "AbstractFactoryPattern.h"
 #endif // AbstractFactoryPattern
+#ifdef DecoratorPattern
+#include "DecoratorPattern.h"
+#endif // DecoratorPattern
 
 int main(int argc, char * argv[]) 
 {
