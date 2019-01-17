@@ -6,10 +6,10 @@
 *  @brief    Pattern Design
 *  @author   Celestial Paler
 *  @email    sun1106153343@hotmail.com
-*  @date     2019.01.16
+*  @date     2019.01.17
 */
 
-#define DecoratorPattern
+#define CommandPattern
 
 #ifdef SingletonPattern
 #include "SingletonPattern.h"
@@ -32,6 +32,9 @@
 #ifdef DecoratorPattern
 #include "DecoratorPattern.h"
 #endif // DecoratorPattern
+#ifdef CommandPattern
+#include  "CommandPattern.h"
+#endif // CommandPattern
 
 int main(int argc, char * argv[]) 
 {

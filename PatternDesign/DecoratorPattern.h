@@ -118,7 +118,7 @@ public:
  */
 void Example(void)
 {
-	IObject * test = new DecoratorC(new DecoratorB(new DecoratorA(new BaseObject)));
+	IObject * test = new DecoratorC(new DecoratorB(new DecoratorA(new BaseObject())));
 	test->Operation();
 	std::cout << std::endl;
 	delete test;

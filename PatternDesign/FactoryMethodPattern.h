@@ -89,4 +89,6 @@ void Example(void)
 
 	productA->Method();
 	productB->Method();
+
+	delete productA, productB;
 }
