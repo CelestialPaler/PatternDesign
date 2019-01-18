@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AbstractFactoryPattern.h" />
+    <ClInclude Include="AdapterPattern.h" />
     <ClInclude Include="CommandPattern.h" />
     <ClInclude Include="DecoratorPattern.h" />
     <ClInclude Include="FactoryMethodPattern.h" />

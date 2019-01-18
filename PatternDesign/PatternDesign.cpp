@@ -9,7 +9,7 @@
 *  @date     2019.01.17
 */
 
-#define SimpleFactoryPattern
+#define AdapterPattern
 
 #ifdef SingletonPattern
 #include "SingletonPattern.h"
@@ -35,6 +35,10 @@
 #ifdef CommandPattern
 #include  "CommandPattern.h"
 #endif // CommandPattern
+#ifdef AdapterPattern
+#include "AdapterPattern.h"
+#endif // AdapterPattern
+
 
 int main(int argc, char * argv[]) 
 {
