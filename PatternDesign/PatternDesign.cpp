@@ -9,7 +9,7 @@
 *  @date     2019.01.17
 */
 
-#define AdapterPattern
+#define FacadePattern
 
 #ifdef SingletonPattern
 #include "SingletonPattern.h"
@@ -38,6 +38,9 @@
 #ifdef AdapterPattern
 #include "AdapterPattern.h"
 #endif // AdapterPattern
+#ifdef FacadePattern
+#include "FacadePattern.h"
+#endif // FacadePattern
 
 
 int main(int argc, char * argv[]) 

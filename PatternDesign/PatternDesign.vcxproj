@@ -143,6 +143,7 @@
     <ClInclude Include="AdapterPattern.h" />
     <ClInclude Include="CommandPattern.h" />
     <ClInclude Include="DecoratorPattern.h" />
+    <ClInclude Include="FacadePattern.h" />
     <ClInclude Include="FactoryMethodPattern.h" />
     <ClInclude Include="SimpleFactoryPattern.h" />
     <ClInclude Include="ObserverPattern.h" />
